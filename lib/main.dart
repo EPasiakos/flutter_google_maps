@@ -130,7 +130,7 @@ class _MapScreenState extends State<MapScreen> {
         LatLng userLocation =
             LatLng(generateRandomLatitude(), generateRandomLongitude());
         // Center the map on the new user's location.
-        mapController.moveCamera(CameraUpdate.newLatLng(userLocation));
+        mapController.animateCamera(CameraUpdate.newLatLng(userLocation));
         // Update the marker's position and center the map on it when the user taps the button
         setState(() {
           _center = userLocation;
@@ -165,7 +165,7 @@ class _MapScreenState extends State<MapScreen> {
               desiredAccuracy: LocationAccuracy.high);
           LatLng userLocation = LatLng(position.latitude, position.longitude);
           // Center the map on the user's location
-          mapController.moveCamera(CameraUpdate.newLatLng(userLocation));
+          mapController.animateCamera(CameraUpdate.newLatLng(userLocation));
           // Update the marker's position and center the map on it when the user taps the button
           setState(() {
             _center = userLocation;
